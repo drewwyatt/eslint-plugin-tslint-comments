@@ -10,17 +10,33 @@
   "author": "Drew Wyatt",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha tests --recursive"
+    "test": "jest"
   },
   "dependencies": {
+    "@typescript-eslint/experimental-utils": "^3.0.2",
     "requireindex": "~1.1.0"
   },
   "devDependencies": {
-    "eslint": "~3.9.1",
-    "mocha": "^3.1.2"
+    "@types/jest": "^25.2.3",
+    "@types/node": "^14.0.5",
+    "@types/prettier": "2.0.1",
+    "@typescript-eslint/parser": "^3.0.2",
+    "eslint": "^7.1.0",
+    "jest": "^26.0.1",
+    "prettier": "^2.0.5",
+    "ts-jest": "^26.0.0",
+    "typescript": "^3.9.3"
   },
   "engines": {
     "node": ">=0.10.0"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "dependenciesMeta": {
+    "jest": {
+      "unplugged": true
+    },
+    "ts-jest": {
+      "unplugged": true
+    }
+  }
 }
