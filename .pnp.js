@@ -62,10 +62,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:2.0.5"
       ],
       [
-        "requireindex",
-        "npm:1.1.0"
-      ],
-      [
         "ts-jest",
         "virtual:d96769d1d0a192789e4c5ae71150f3c2f1905f76c5171dfd1d224154caf31a784b23c519ae50c89f944ebc6d523f28a284bef34902e1c4d94517590f78299b43#npm:26.0.0"
       ],
@@ -89,7 +85,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:7.1.0"],
             ["jest", "npm:26.0.1"],
             ["prettier", "npm:2.0.5"],
-            ["requireindex", "npm:1.1.0"],
             ["ts-jest", "virtual:d96769d1d0a192789e4c5ae71150f3c2f1905f76c5171dfd1d224154caf31a784b23c519ae50c89f944ebc6d523f28a284bef34902e1c4d94517590f78299b43#npm:26.0.0"],
             ["typescript", "patch:typescript@npm%3A3.9.4#builtin<compat/typescript>::version=3.9.4&hash=8cac75"]
           ],
@@ -2169,7 +2164,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:7.1.0"],
             ["jest", "npm:26.0.1"],
             ["prettier", "npm:2.0.5"],
-            ["requireindex", "npm:1.1.0"],
             ["ts-jest", "virtual:d96769d1d0a192789e4c5ae71150f3c2f1905f76c5171dfd1d224154caf31a784b23c519ae50c89f944ebc6d523f28a284bef34902e1c4d94517590f78299b43#npm:26.0.0"],
             ["typescript", "patch:typescript@npm%3A3.9.4#builtin<compat/typescript>::version=3.9.4&hash=8cac75"]
           ],
@@ -3330,7 +3324,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],
       ["jest", [
         ["npm:26.0.1", {
-          "packageLocation": "./.yarn/unplugged/jest-npm-26.0.1-2946b61d73/node_modules/jest/",
+          "packageLocation": "./.yarn/cache/jest-npm-26.0.1-2946b61d73-3.zip/node_modules/jest/",
           "packageDependencies": [
             ["jest", "npm:26.0.1"],
             ["@jest/core", "npm:26.0.1"],
@@ -5042,15 +5036,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["requireindex", [
-        ["npm:1.1.0", {
-          "packageLocation": "./.yarn/cache/requireindex-npm-1.1.0-445c011741-3.zip/node_modules/requireindex/",
-          "packageDependencies": [
-            ["requireindex", "npm:1.1.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["resolve", [
         ["patch:resolve@npm%3A1.17.0#builtin<compat/resolve>::version=1.17.0&hash=e7677c", {
           "packageLocation": "./.yarn/cache/resolve-patch-c66c1ab009-3.zip/node_modules/resolve/",
@@ -5883,7 +5868,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],
       ["ts-jest", [
         ["virtual:d96769d1d0a192789e4c5ae71150f3c2f1905f76c5171dfd1d224154caf31a784b23c519ae50c89f944ebc6d523f28a284bef34902e1c4d94517590f78299b43#npm:26.0.0", {
-          "packageLocation": "./.yarn/unplugged/ts-jest-virtual-ad928474a0/node_modules/ts-jest/",
+          "packageLocation": "./.yarn/$$virtual/ts-jest-virtual-ad928474a0/0/cache/ts-jest-npm-26.0.0-01cb73ca1a-3.zip/node_modules/ts-jest/",
           "packageDependencies": [
             ["ts-jest", "virtual:d96769d1d0a192789e4c5ae71150f3c2f1905f76c5171dfd1d224154caf31a784b23c519ae50c89f944ebc6d523f28a284bef34902e1c4d94517590f78299b43#npm:26.0.0"],
             ["bs-logger", "npm:0.2.6"],

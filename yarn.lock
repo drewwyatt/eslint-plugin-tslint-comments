@@ -1784,14 +1784,8 @@ __metadata:
     eslint: ^7.1.0
     jest: ^26.0.1
     prettier: ^2.0.5
-    requireindex: ~1.1.0
     ts-jest: ^26.0.0
     typescript: ^3.9.3
-  dependenciesMeta:
-    jest:
-      unplugged: true
-    ts-jest:
-      unplugged: true
   languageName: unknown
   linkType: soft
 
@@ -4421,13 +4415,6 @@ fsevents@^2.1.2:
   version: 2.0.0
   resolution: "require-main-filename@npm:2.0.0"
   checksum: 3/8d3633149a7fef67d14613146247137fe1dc4cc969bf2d1adcd40e3c28056de503229f41e78cba5efebad3a223cbfb4215fd220d879148df10c6d9a877099dbd
-  languageName: node
-  linkType: hard
-
-"requireindex@npm:~1.1.0":
-  version: 1.1.0
-  resolution: "requireindex@npm:1.1.0"
-  checksum: 3/571a7c97bc3c881321c757c8a1bee09da41eeefab8294bd7858bc4f108eab73e4ad4ce80f8206e7c20ffa1482eda842f3b3021f28ab543ddfc1756272659c71e
   languageName: node
   linkType: hard
 
