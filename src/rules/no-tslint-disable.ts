@@ -27,11 +27,11 @@ export default createRule({
     return {
       Program: () => {
         const comments = sourceCode.getAllComments()
-        comments.forEach(({ type, value }) => {
-          if (ENABLE_DISABLE_REGEX.test(value)) {
+        comments.forEach(c => {
+          if (ENABLE_DISABLE_REGEX.test(c.value)) {
             context.report({
-              data: { text: toText(value, type) },
-              node: comments[0],
+              data: { text: toText(c.value, c.type) },
+              node: c,
               messageId: 'commentDetected',
             })
           }
