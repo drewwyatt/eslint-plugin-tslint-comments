@@ -1,13 +1,17 @@
 {
   "name": "eslint-plugin-tslint-comments",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Find and remove tslint comments",
   "keywords": [
     "eslint",
     "eslintplugin",
     "eslint-plugin"
   ],
-  "author": "Drew Wyatt",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:drewwyatt/eslint-plugin-tslint-comments.git"
+  },
+  "author": "Drew Wyatt <drew.j.wyatt@gmail.com>",
   "main": "lib/index.js",
   "scripts": {
     "test": "jest"
