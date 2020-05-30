@@ -1,5 +1,7 @@
 # eslint-plugin-tslint-comments
 
+[![npm badge](https://img.shields.io/npm/v/eslint-plugin-tslint-comments?style=flat-square)](https://www.npmjs.com/package/eslint-plugin-tslint-comments)
+
 Useful when migrating from tslint to eslint. Once tslint has been removed, this rule helps locate tslint annotations (e.g. `// tslint:disable`).
 
 ## Installation
