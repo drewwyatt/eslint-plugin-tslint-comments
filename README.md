@@ -1,6 +1,6 @@
 # eslint-plugin-tslint-comments
 
-Find and remove tslint:ignore comments
+Useful when migrating from tslint to eslint. Once tslint has been removed, this rule helps locate tslint annotations (e.g. `// tslint:disable`).
 
 ## Installation
 
@@ -24,28 +24,20 @@ Add `tslint-comments` to the plugins section of your `.eslintrc` configuration f
 
 ```json
 {
-    "plugins": [
-        "tslint-comments"
-    ]
+  "plugins": ["tslint-comments"]
 }
 ```
-
 
 Then configure the rules you want to use under the rules section.
 
 ```json
 {
-    "rules": {
-        "tslint-comments/rule-name": 2
-    }
+  "rules": {
+    "tslint-comments/forbid-all": 2
+  }
 }
 ```
 
 ## Supported Rules
 
-* Fill in provided rules here
-
-
-
-
-
+- [forbid-all](docs/rules/forbid-all.md): Identify tslint rule flags so that they can be removed

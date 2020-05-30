@@ -12,7 +12,7 @@ export default createRule({
   meta: {
     type: 'suggestion',
     docs: {
-      description: 'tslint comments are no longer needed and should be removed',
+      description: 'Identify tslint rule flags so that they can be removed',
       category: 'Stylistic Issues',
       recommended: 'warn',
     },
