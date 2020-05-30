@@ -8,7 +8,7 @@ const toText = (text: string, type: 'Line' | 'Block') =>
   type === 'Line' ? ['//', text.trim()].join(' ') : ['/*', text.trim(), '*/'].join(' ')
 
 export default createRule({
-  name: 'no-tslint-disable',
+  name: 'forbid-all',
   meta: {
     type: 'suggestion',
     docs: {

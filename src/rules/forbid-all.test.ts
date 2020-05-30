@@ -1,4 +1,4 @@
-import rule from './no-tslint-disable'
+import rule from './forbid-all'
 import { RuleTester } from '../rule-tester'
 
 const PALANTIR_EXAMPLES = [
@@ -27,7 +27,7 @@ const ruleTester = new RuleTester({
   parser: '@typescript-eslint/parser',
 })
 
-ruleTester.run('no-tslint-disable', rule, {
+ruleTester.run('forbid-all', rule, {
   valid: [
     {
       code: 'let a: readonly any[] = [];',
