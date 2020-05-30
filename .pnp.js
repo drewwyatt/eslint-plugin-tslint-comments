@@ -30,6 +30,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     ],
     "fallbackPool": [
       [
+        "@types/eslint-visitor-keys",
+        "npm:1.0.0"
+      ],
+      [
         "@types/jest",
         "npm:25.2.3"
       ],
@@ -52,6 +56,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [
         "eslint",
         "npm:7.1.0"
+      ],
+      [
+        "eslint-visitor-keys",
+        "npm:1.1.0"
       ],
       [
         "flat-cache",
@@ -81,12 +89,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
+            ["@types/eslint-visitor-keys", "npm:1.0.0"],
             ["@types/jest", "npm:25.2.3"],
             ["@types/node", "npm:14.0.5"],
             ["@types/prettier", "npm:2.0.1"],
             ["@typescript-eslint/experimental-utils", "virtual:d96769d1d0a192789e4c5ae71150f3c2f1905f76c5171dfd1d224154caf31a784b23c519ae50c89f944ebc6d523f28a284bef34902e1c4d94517590f78299b43#npm:3.0.2"],
             ["@typescript-eslint/parser", "virtual:d96769d1d0a192789e4c5ae71150f3c2f1905f76c5171dfd1d224154caf31a784b23c519ae50c89f944ebc6d523f28a284bef34902e1c4d94517590f78299b43#npm:3.0.2"],
             ["eslint", "npm:7.1.0"],
+            ["eslint-visitor-keys", "npm:1.1.0"],
             ["flat-cache", "npm:2.0.1"],
             ["jest", "npm:26.0.1"],
             ["prettier", "npm:2.0.5"],
@@ -2161,12 +2171,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["eslint-plugin-tslint-comments", "workspace:."],
+            ["@types/eslint-visitor-keys", "npm:1.0.0"],
             ["@types/jest", "npm:25.2.3"],
             ["@types/node", "npm:14.0.5"],
             ["@types/prettier", "npm:2.0.1"],
             ["@typescript-eslint/experimental-utils", "virtual:d96769d1d0a192789e4c5ae71150f3c2f1905f76c5171dfd1d224154caf31a784b23c519ae50c89f944ebc6d523f28a284bef34902e1c4d94517590f78299b43#npm:3.0.2"],
             ["@typescript-eslint/parser", "virtual:d96769d1d0a192789e4c5ae71150f3c2f1905f76c5171dfd1d224154caf31a784b23c519ae50c89f944ebc6d523f28a284bef34902e1c4d94517590f78299b43#npm:3.0.2"],
             ["eslint", "npm:7.1.0"],
+            ["eslint-visitor-keys", "npm:1.1.0"],
             ["flat-cache", "npm:2.0.1"],
             ["jest", "npm:26.0.1"],
             ["prettier", "npm:2.0.5"],

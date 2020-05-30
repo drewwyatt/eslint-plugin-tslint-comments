@@ -17,9 +17,11 @@
     "test": "jest"
   },
   "dependencies": {
-    "@typescript-eslint/experimental-utils": "^3.0.2"
+    "@typescript-eslint/experimental-utils": "^3.0.2",
+    "eslint-visitor-keys": "^1.1.0"
   },
   "devDependencies": {
+    "@types/eslint-visitor-keys": "^1.0.0",
     "@types/jest": "^25.2.3",
     "@types/node": "^14.0.5",
     "@types/prettier": "2.0.1",
