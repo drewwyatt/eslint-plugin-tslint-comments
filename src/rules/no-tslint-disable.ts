@@ -1,5 +1,11 @@
-// import { AST_TOKEN_TYPES } from '@typescript-eslint/experimental-utils'
 import createRule from '../create-rule'
+
+// tslint regex
+// https://github.com/palantir/tslint/blob/95d9d958833fd9dc0002d18cbe34db20d0fbf437/src/enableDisableRules.ts#L32
+const ENABLE_DISABLE_REGEX = /^\s*tslint:(enable|disable)(?:-(line|next-line))?(:|\s|$)/
+
+const toText = (text: string, type: 'Line' | 'Block') =>
+  type === 'Line' ? ['//', text.trim()].join(' ') : ['/*', text.trim(), '*/'].join(' ')
 
 export default createRule({
   name: 'no-tslint-disable',
@@ -11,7 +17,7 @@ export default createRule({
       recommended: 'warn',
     },
     messages: {
-      commentDetected: 'ahh',
+      commentDetected: 'tslint comment detected: "{{ text }}"',
     },
     schema: [],
   },
@@ -21,13 +27,15 @@ export default createRule({
     return {
       Program: () => {
         const comments = sourceCode.getAllComments()
-        if (comments.length) {
-          context.report({
-            data: { hey: 'wow' },
-            node: comments[0],
-            messageId: 'commentDetected',
-          })
-        }
+        comments.forEach(({ type, value }) => {
+          if (ENABLE_DISABLE_REGEX.test(value)) {
+            context.report({
+              data: { text: toText(value, type) },
+              node: comments[0],
+              messageId: 'commentDetected',
+            })
+          }
+        })
       },
     }
   },
