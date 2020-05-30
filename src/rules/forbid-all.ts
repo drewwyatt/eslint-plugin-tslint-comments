@@ -34,7 +34,17 @@ export default createRule({
               data: { text: toText(c.value, c.type) },
               node: c,
               messageId: 'commentDetected',
-              fix: fixer => fixer.remove(c),
+              fix: fixer => {
+                const rangeStart = sourceCode.getIndexFromLoc({
+                  column: c.loc.start.column > 0 ? c.loc.start.column - 1 : 0,
+                  line: c.loc.start.line,
+                })
+                const rangeEnd = sourceCode.getIndexFromLoc({
+                  column: c.loc.end.column,
+                  line: c.loc.end.line,
+                })
+                return fixer.removeRange([rangeStart, rangeEnd + 1])
+              },
             })
           }
         })

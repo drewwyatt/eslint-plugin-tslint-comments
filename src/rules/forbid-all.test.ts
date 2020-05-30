@@ -4,33 +4,45 @@ import { RuleTester } from '../rule-tester'
 type Testable = {
   code: string
   text?: string
-  column: number
+  column?: number
+  line?: number
   output?: string
 }
 
 const PALANTIR_EXAMPLES: Testable[] = [
-  { code: '/* tslint:disable */', column: 1 }, // Disable all rules for the rest of the file
-  { code: '/* tslint:enable */', column: 1 }, // Enable all rules for the rest of the file
+  { code: '/* tslint:disable */' }, // Disable all rules for the rest of the file
+  { code: '/* tslint:enable */' }, // Enable all rules for the rest of the file
   {
     code: '/* tslint:disable:rule1 rule2 rule3... */',
-    column: 1,
   }, // Disable the listed rules for the rest of the file
   {
     code: '/* tslint:enable:rule1 rule2 rule3... */',
-    column: 1,
   }, // Enable the listed rules for the rest of the file
-  { code: '// tslint:disable-next-line', column: 1 }, // Disables all rules for the following line
+  { code: '// tslint:disable-next-line' }, // Disables all rules for the following line
   {
     code: 'someCode(); // tslint:disable-line',
     text: '// tslint:disable-line',
     column: 13,
-    output: 'someCode(); ',
+    output: 'someCode();',
   }, // Disables all rules for the current line
   {
     code: '// tslint:disable-next-line:rule1 rule2 rule3...',
-
-    column: 1,
   }, // Disables the listed rules for the next line
+]
+
+// prettier-ignore
+const MORE_EXAMPLES: Testable[] = [
+  {
+    code: `const woah = doSomeStuff();
+// tslint:disable-line
+console.log(woah);
+`,
+    output: `const woah = doSomeStuff();
+console.log(woah);
+`,
+    text: '// tslint:disable-line',
+    line: 2,
+  },
 ]
 
 const ruleTester = new RuleTester({
@@ -55,18 +67,18 @@ ruleTester.run('forbid-all', rule, {
       code: '/* another comment that mentions tslint */',
     },
   ],
-  invalid: [
-    ...PALANTIR_EXAMPLES.map(({ code, column, output, text }) => ({
+  invalid: [...PALANTIR_EXAMPLES, ...MORE_EXAMPLES].map(
+    ({ code, column, line, output, text }) => ({
       code,
       output: output ?? '',
       errors: [
         {
-          column,
+          column: column ?? 1,
+          line: line ?? 1,
           data: { text: text ?? code },
-          line: 1,
           messageId: 'commentDetected' as const,
         },
       ],
-    })),
-  ],
+    }),
+  ),
 })
