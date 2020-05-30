@@ -1,26 +1,36 @@
 import rule from './forbid-all'
 import { RuleTester } from '../rule-tester'
 
-const PALANTIR_EXAMPLES = [
-  ['/* tslint:disable */', '/* tslint:disable */', 1] as const, // Disable all rules for the rest of the file
-  ['/* tslint:enable */', '/* tslint:enable */', 1] as const, // Enable all rules for the rest of the file
-  [
-    '/* tslint:disable:rule1 rule2 rule3... */',
-    '/* tslint:disable:rule1 rule2 rule3... */',
-    1,
-  ] as const, // Disable the listed rules for the rest of the file
-  [
-    '/* tslint:enable:rule1 rule2 rule3... */',
-    '/* tslint:enable:rule1 rule2 rule3... */',
-    1,
-  ] as const, // Enable the listed rules for the rest of the file
-  ['// tslint:disable-next-line', '// tslint:disable-next-line', 1] as const, // Disables all rules for the following line
-  ['someCode(); // tslint:disable-line', '// tslint:disable-line', 13] as const, // Disables all rules for the current line
-  [
-    '// tslint:disable-next-line:rule1 rule2 rule3...',
-    '// tslint:disable-next-line:rule1 rule2 rule3...',
-    1,
-  ] as const, // Disables the listed rules for the next line
+type Testable = {
+  code: string
+  text?: string
+  column: number
+  output?: string
+}
+
+const PALANTIR_EXAMPLES: Testable[] = [
+  { code: '/* tslint:disable */', column: 1 }, // Disable all rules for the rest of the file
+  { code: '/* tslint:enable */', column: 1 }, // Enable all rules for the rest of the file
+  {
+    code: '/* tslint:disable:rule1 rule2 rule3... */',
+    column: 1,
+  }, // Disable the listed rules for the rest of the file
+  {
+    code: '/* tslint:enable:rule1 rule2 rule3... */',
+    column: 1,
+  }, // Enable the listed rules for the rest of the file
+  { code: '// tslint:disable-next-line', column: 1 }, // Disables all rules for the following line
+  {
+    code: 'someCode(); // tslint:disable-line',
+    text: '// tslint:disable-line',
+    column: 13,
+    output: 'someCode(); ',
+  }, // Disables all rules for the current line
+  {
+    code: '// tslint:disable-next-line:rule1 rule2 rule3...',
+
+    column: 1,
+  }, // Disables the listed rules for the next line
 ]
 
 const ruleTester = new RuleTester({
@@ -46,13 +56,13 @@ ruleTester.run('forbid-all', rule, {
     },
   ],
   invalid: [
-    ...PALANTIR_EXAMPLES.map(([code, comment, column]) => ({
+    ...PALANTIR_EXAMPLES.map(({ code, column, output, text }) => ({
       code,
-      output: code,
+      output: output ?? '',
       errors: [
         {
           column,
-          data: { text: comment },
+          data: { text: text ?? code },
           line: 1,
           messageId: 'commentDetected' as const,
         },

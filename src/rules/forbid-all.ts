@@ -20,6 +20,7 @@ export default createRule({
       commentDetected: 'tslint comment detected: "{{ text }}"',
     },
     schema: [],
+    fixable: 'code',
   },
   defaultOptions: [],
   create: context => {
@@ -33,6 +34,7 @@ export default createRule({
               data: { text: toText(c.value, c.type) },
               node: c,
               messageId: 'commentDetected',
+              fix: fixer => fixer.remove(c),
             })
           }
         })
