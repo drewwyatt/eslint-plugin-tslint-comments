@@ -74,6 +74,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:2.0.5"
       ],
       [
+        "rimraf",
+        "npm:3.0.2"
+      ],
+      [
         "ts-jest",
         "virtual:d96769d1d0a192789e4c5ae71150f3c2f1905f76c5171dfd1d224154caf31a784b23c519ae50c89f944ebc6d523f28a284bef34902e1c4d94517590f78299b43#npm:26.0.0"
       ],
@@ -100,6 +104,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["flat-cache", "npm:2.0.1"],
             ["jest", "npm:26.0.1"],
             ["prettier", "npm:2.0.5"],
+            ["rimraf", "npm:3.0.2"],
             ["ts-jest", "virtual:d96769d1d0a192789e4c5ae71150f3c2f1905f76c5171dfd1d224154caf31a784b23c519ae50c89f944ebc6d523f28a284bef34902e1c4d94517590f78299b43#npm:26.0.0"],
             ["typescript", "patch:typescript@npm%3A3.9.4#builtin<compat/typescript>::version=3.9.4&hash=8cac75"]
           ],
@@ -2182,6 +2187,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["flat-cache", "npm:2.0.1"],
             ["jest", "npm:26.0.1"],
             ["prettier", "npm:2.0.5"],
+            ["rimraf", "npm:3.0.2"],
             ["ts-jest", "virtual:d96769d1d0a192789e4c5ae71150f3c2f1905f76c5171dfd1d224154caf31a784b23c519ae50c89f944ebc6d523f28a284bef34902e1c4d94517590f78299b43#npm:26.0.0"],
             ["typescript", "patch:typescript@npm%3A3.9.4#builtin<compat/typescript>::version=3.9.4&hash=8cac75"]
           ],
