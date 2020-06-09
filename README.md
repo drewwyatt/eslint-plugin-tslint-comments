@@ -2,6 +2,10 @@
 
 [![npm badge](https://img.shields.io/npm/v/eslint-plugin-tslint-comments?style=flat-square)](https://www.npmjs.com/package/eslint-plugin-tslint-comments)
 
+## Archived because this rule is now part of [`@typescript-eslint/eslint-plugin`](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin)
+
+### Use [`ban-tslint-comment`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-tslint-comment.md) instead
+
 Useful when migrating from tslint to eslint. Once tslint has been removed, this rule helps locate tslint annotations (e.g. `// tslint:disable`).
 
 ## Installation
